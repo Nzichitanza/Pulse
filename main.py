@@ -56,7 +56,7 @@ def send_dm(user_id):
     url = f"https://graph.facebook.com/v18.0/{INSTAGRAM_ACCOUNT_ID}/messages"
     payload = {
         "recipient": f"{{'id':'{user_id}'}}",
-        "message": f"{{'text':'{MESSAGGIO_DM}', 'attachment':{{'type':'image', 'payload':{{'id':'{media_id}'}}}}}}}",
+        "message": f'{{"text":"{MESSAGGIO_DM}", "attachment":{{"type":"image", "payload":{{"id":"{media_id}"}}}}}}}',
         "access_token": ACCESS_TOKEN
     }
     response = requests.post(url, data=payload)
